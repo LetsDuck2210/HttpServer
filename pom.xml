@@ -1,9 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>HttpServer</groupId>
-  <artifactId>HttpServer</artifactId>
-  <version>0.1</version>
-  <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>HttpServer</groupId>
+	<artifactId>HttpServer</artifactId>
+	<version>0.2</version>
+	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
@@ -25,8 +27,8 @@
 						</goals>
 						<configuration>
 							<outputDirectory>
-                    ${project.build.directory}/libs
-                			</outputDirectory>
+								${project.build.directory}/libs
+							</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
@@ -43,7 +45,8 @@
 						<configuration>
 							<shadedArtifactAttached>true</shadedArtifactAttached>
 							<transformers>
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>main.Main</mainClass>
 								</transformer>
 							</transformers>
@@ -53,4 +56,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.10.1</version>
+		</dependency>
+	</dependencies>
 </project>
